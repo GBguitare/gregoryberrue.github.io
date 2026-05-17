@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cours de guitare à Saint-Étienne — Grégory Berrué</title>
+  <meta name="description" content="Cours de guitare à Saint-Étienne et cours de guitare sur Saint-Étienne pour adultes débutants à intermédiaires. Approche holistique, sensible et personnalisée." />
+  <meta name="keywords" content="cours de guitare Saint-Étienne, cours de guitare à Saint-Étienne, cours de guitare sur Saint-Étienne, prof de guitare Saint-Étienne, professeur de guitare Saint-Étienne, cours guitare adulte Saint-Étienne, guitare débutant Saint-Étienne, Grégory Berrué" />
+  <meta name="author" content="Grégory Berrué" />
+
+  <style>
+    :root {
+      --ink: #2d1b12;
+      --brown: #4a2b1b;
+      --brown-dark: #1f120d;
+      --gold: #d8b37a;
+      --cream: #f2dfc3;
+      --paper: #ead6b9;
+      --paper-light: #f6ead6;
+      --muted: #7d5a3b;
+      --shadow: rgba(31, 18, 13, 0.28);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,.55), transparent 38%),
+        radial-gradient(circle at bottom right, rgba(112,65,35,.25), transparent 35%),
+        linear-gradient(135deg, #f4e5ce 0%, #dec09a 55%, #c79d71 100%);
+      line-height: 1.65;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .32;
+      background-image:
+        linear-gradient(90deg, rgba(70,40,22,.08) 1px, transparent 1px),
+        linear-gradient(rgba(70,40,22,.08) 1px, transparent 1px);
+      background-size: 22px 22px;
+      mix-blend-mode: multiply;
+      z-index: -1;
+    }
+
+    a { color: inherit; }
+
+    .site {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 42px;
+      align-items: center;
+      padding: 48px 0 34px;
+    }
+
+    .portrait-card {
+      position: relative;
+      min-height: 620px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(216,179,122,.45);
+      box-shadow: 0 28px 80px var(--shadow);
+      background:
+        linear-gradient(90deg, rgba(31,18,13,.2), rgba(31,18,13,.05)),
+        url("portrait-guitare.jpg") center / cover no-repeat;
+    }
+
+    .portrait-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 35% 35%, transparent 0 35%, rgba(31,18,13,.25) 72%),
+        linear-gradient(180deg, transparent, rgba(31,18,13,.2));
+    }
+
+    .hero-content {
+      padding: 34px 18px;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .84rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1, h2, h3 { line-height: 1.08; margin: 0; font-weight: 500; }
+
+    h1 {
+      font-size: clamp(3.2rem, 8vw, 6.7rem);
+      color: var(--brown);
+      letter-spacing: -.045em;
+    }
+
+    .subtitle {
+      font-size: clamp(1.45rem, 3vw, 2.25rem);
+      color: var(--brown-dark);
+      margin: 14px 0 18px;
+      line-height: 1.18;
+    }
+
+    .promise {
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      font-style: italic;
+      color: var(--muted);
+      margin: 28px 0 0;
+    }
+
+    .ornament {
+      width: 160px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 26px 0;
+      position: relative;
+    }
+
+    .ornament::before, .ornament::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--gold);
+      transform: translateY(-50%);
+    }
+
+    .ornament::before { left: 68px; }
+    .ornament::after { left: 84px; }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid rgba(74,43,27,.28);
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .button.primary {
+      background: var(--brown);
+      color: var(--cream);
+      box-shadow: 0 12px 28px rgba(74,43,27,.28);
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,.28);
+      color: var(--brown);
+    }
+
+    .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(74,43,27,.22); }
+
+    section { padding: 54px 0; }
+
+    .panel {
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,.34), transparent 34%),
+        linear-gradient(135deg, rgba(246,234,214,.88), rgba(232,205,170,.82));
+      border: 1px solid rgba(120,75,42,.22);
+      border-radius: var(--radius);
+      padding: clamp(28px, 4vw, 56px);
+      box-shadow: 0 22px 60px rgba(74,43,27,.16);
+    }
+
+    .intro {
+      text-align: center;
+      font-size: clamp(1.25rem, 2.35vw, 1.85rem);
+      line-height: 1.42;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .intro em { color: var(--brown); }
+
+    .section-title {
+      font-size: clamp(2.25rem, 4.2vw, 4.4rem);
+      color: var(--brown);
+      margin-bottom: 24px;
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 820px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+      align-items: start;
+    }
+
+    .card {
+      background: rgba(255,255,255,.32);
+      border: 1px solid rgba(120,75,42,.18);
+      border-radius: 22px;
+      padding: 26px;
+    }
+
+    .card h3 {
+      font-size: 1.6rem;
+      color: var(--brown);
+      margin-bottom: 12px;
+    }
+
+    .card p, .card li { font-size: 1.08rem; }
+
+    ul {
+      padding-left: 1.1em;
+      margin: 12px 0 0;
+    }
+
+    li::marker { color: var(--muted); }
+
+    .story p {
+      font-size: 1.1rem;
+      margin: 0 0 1.05em;
+    }
+
+    .story strong {
+      color: var(--brown);
+      font-weight: 700;
+    }
+
+    .quote {
+      font-size: clamp(1.55rem, 3vw, 2.25rem);
+      font-style: italic;
+      text-align: center;
+      color: var(--brown);
+      margin: 34px auto 0;
+      max-width: 820px;
+      line-height: 1.22;
+    }
+
+    .practical-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .practical-item {
+      background: rgba(255,255,255,.32);
+      border: 1px solid rgba(120,75,42,.16);
+      border-radius: 20px;
+      padding: 22px;
+      min-height: 138px;
+    }
+
+    .practical-item strong {
+      display: block;
+      font-size: 1.18rem;
+      color: var(--brown);
+      margin-bottom: 8px;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      font-weight: 700;
+      color: var(--brown);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(74,43,27,.32);
+      border-radius: 16px;
+      padding: 14px 15px;
+      font: inherit;
+      color: var(--ink);
+      background: rgba(255,255,255,.55);
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--brown);
+      box-shadow: 0 0 0 4px rgba(216,179,122,.28);
+    }
+
+    textarea { min-height: 150px; resize: vertical; }
+
+    .fineprint {
+      font-size: .95rem;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    footer {
+      padding: 36px 0 54px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .contact-strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px 28px;
+      margin-top: 18px;
+      font-size: 1.08rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 26px;
+      }
+
+      .portrait-card {
+        min-height: 430px;
+        order: -1;
+      }
+
+      .hero-content { padding: 16px 4px 0; }
+      .grid-2, .practical-list, .form-row { grid-template-columns: 1fr; }
+      section { padding: 34px 0; }
+    }
+
+    @media (max-width: 520px) {
+      .site { width: min(100% - 22px, 1120px); }
+      .portrait-card { min-height: 330px; border-radius: 22px; }
+      .panel { border-radius: 22px; padding: 24px 18px; }
+      .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="site">
+    <header class="hero">
+      <div class="portrait-card" aria-label="Illustration de Grégory Berrué jouant de la guitare"></div>
+
+      <div class="hero-content">
+        <div class="eyebrow">Saint-Étienne centre · Anatole France — Tréfilerie</div>
+        <h1>Cours de guitare à Saint-Étienne</h1>
+        <p class="subtitle">Grégory Berrué<br />Débutants complets à intermédiaires</p>
+        <div class="ornament" aria-hidden="true"></div>
+        <p class="promise">Cours de guitare sur Saint-Étienne avec une approche holistique, sensible et personnalisée.</p>
+        <p class="promise">Révélez-vous à travers l’instrument.</p>
+        <div class="cta-row">
+          <a class="button primary" href="#contact">Me contacter</a>
+          <a class="button secondary" href="#approche">Découvrir mon approche</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="panel intro">
+        <p><em>Et si la musique devenait un chemin vers vous-même&nbsp;?</em></p>
+        <p>Vous ressentez l’envie de jouer, sans savoir par où commencer… ou vous avez déjà essayé, sans jamais vraiment trouver votre place&nbsp;?</p>
+        <p><strong>Il n’est jamais trop tard pour commencer.</strong></p>
+      </div>
+    </section>
+
+    <section id="approche">
+      <div class="panel">
+        <h2 class="section-title">Une autre manière d’apprendre la guitare</h2>
+        <p class="lead">Je propose des cours de guitare à Saint-Étienne centrés sur la personne avant la performance. La guitare devient un outil pour se reconnecter à soi, retrouver du plaisir, de la confiance et s’exprimer librement.</p>
+
+        <div class="grid-2" style="margin-top: 30px;">
+          <article class="card">
+            <h3>Pour qui&nbsp;?</h3>
+            <ul>
+              <li>Débutants complets.</li>
+              <li>Adultes qui n’osent pas se lancer.</li>
+              <li>Guitaristes intermédiaires qui souhaitent progresser.</li>
+              <li>Personnes qui reprennent après une pause ou un blocage.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Ce que nous travaillons</h3>
+            <ul>
+              <li>Accompagnement, impro, riffs, morceaux.</li>
+              <li>Harmonie rendue intuitive par des images simples.</li>
+              <li>Rythme clair et structuré.</li>
+              <li>Chant accompagné, si vous souhaitez jouer en chantant.</li>
+              <li>Solfège si souhaité, jamais imposé.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="qui-suis-je">
+      <div class="panel story">
+        <h2 class="section-title">Qui suis-je&nbsp;?</h2>
+
+        <p><strong>Je n’ai pas grandi avec une guitare entre les mains. Je ne suis pas passé par le conservatoire.</strong> Pendant longtemps, la musique est restée quelque chose que je regardais de loin, avec envie, en pensant qu’il était trop tard pour m’y mettre.</p>
+
+        <p><strong>J’ai commencé la guitare à 38 ans</strong>, après plusieurs années à enchaîner des burn-out, avec cette sensation persistante de ne pas être à ma place.</p>
+
+        <p>Puis un jour, j’ai pris une guitare.</p>
+
+        <p>Très vite, ça a été une évidence. <strong>Pas juste un loisir, mais un point d’ancrage.</strong> Quelque chose qui m’a permis de me recentrer, de retrouver du plaisir, du calme, du sens.</p>
+
+        <p>Alors j’ai plongé. Des heures chaque jour. Avec enthousiasme, mais aussi avec beaucoup d’erreurs. J’ai cherché seul, je me suis dispersé, j’ai perdu du temps sur des choses inutiles ou mal adaptées à moi.</p>
+
+        <p><strong>Et c’est précisément pour ça que j’enseigne aujourd’hui.</strong></p>
+
+        <p>Parce que ce chemin, je l’ai parcouru récemment. Je sais ce que ça fait de débuter&nbsp;: les doutes, la frustration, l’impression de ne pas avancer… mais aussi les déclics, les petites victoires, et le plaisir immense quand tout commence à s’aligner.</p>
+
+        <p>Je suis convaincu de deux choses&nbsp;: <strong>il n’est jamais trop tard pour commencer</strong>, et <strong>avec une approche adaptée, on peut progresser rapidement et atteindre un très bon niveau</strong>.</p>
+
+        <p>Aujourd’hui, j’accompagne en priorité des <strong>adultes qui ressentent l’envie de jouer sans forcément oser</strong>, ou qui pensent que ce n’est plus possible, sans savoir comment s’y prendre. J’accompagne aussi <strong>des guitaristes ayant déjà de bonnes bases</strong>, mais qui se sentent bloqués, tournent en rond, ou ont perdu le plaisir de jouer.</p>
+
+        <p><strong>Pas avec une méthode standard</strong>, mais avec une approche humaine, sensible et personnalisée.</p>
+
+        <p>Apprendre la guitare, ce n’est pas seulement enchaîner des positions d’accords, mémoriser des schémas de pentatoniques ou parcourir mécaniquement des gammes majeures et mineures sur le manche. <strong>C’est trouver ce qui, en nous, demande à éclore… et le laisser s’exprimer.</strong></p>
+
+        <p>J’ai développé une approche d’enseignement qui permet, dès les premiers cours, de <strong>comprendre l’harmonie à travers des images simples et des métaphores concrètes</strong>, qui la rendent accessible et intuitive. J’y associe un <strong>travail du rythme clair et structuré</strong>, pour ancrer des bases solides et progresser rapidement.</p>
+
+        <p>Je joue et j’enseigne presque tous les styles. Certains styles très spécifiques, comme le <strong>manouche</strong>, ne font pas partie de mon champ d’expertise&nbsp;: dans ce cas, je préfère vous rediriger vers un enseignant plus spécialisé.</p>
+
+        <p>J’ai également des bases solides en chant, ce qui me permet de vous accompagner si vous souhaitez <strong>jouer tout en chantant</strong>. Je peux aussi vous accompagner sur le <strong>solfège si vous en ressentez le besoin</strong>, même si je considère que pour la guitare, ce n’est pas indispensable.</p>
+
+        <p><strong>Je prépare spécifiquement chaque cours pour vous</strong>, d’une séance à l’autre, en fonction de votre progression, de vos objectifs et de votre sensibilité.</p>
+
+        <p>Enfin, le cours est aussi un temps d’échange. Mais je tiens à ce que <strong>ce temps ne soit pas facturé sur votre heure de cours</strong>. Pour cela, j’utilise un sablier de 30 minutes, que l’on retourne deux fois pendant la séance. Entre deux cycles, une pause est possible&nbsp;: prendre un café, échanger librement, souffler… puis reprendre quand vous vous sentez prêt.</p>
+
+        <p>Je prévois toujours une marge entre deux élèves, car mieux vous connaître fait pleinement partie du travail — et me permet de vous accompagner de manière plus juste, plus humaine.</p>
+
+        <p>Je vous reçois chez moi, dans un cadre entièrement pensé pour vous accueillir. <strong>Mon salon a été aménagé spécifiquement</strong> pour que vous vous y sentiez à l’aise, dans de bonnes conditions pour apprendre et progresser.</p>
+
+        <p><strong>Je dispose également d’un piano</strong>, qui me permet parfois d’expliquer certaines notions — notamment d’harmonie — de manière plus visuelle et intuitive que sur la guitare.</p>
+
+        <div class="quote">« Il n’est jamais trop tard pour commencer. »</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="panel">
+        <h2 class="section-title">Infos pratiques</h2>
+        <div class="practical-list">
+          <div class="practical-item">
+            <strong>Lieu</strong>
+            Anatole France — Tréfilerie<br />Saint-Étienne centre.
+          </div>
+          <div class="practical-item">
+            <strong>Public</strong>
+            Adultes débutants, reprises, intermédiaires bloqués ou en recherche d’un accompagnement plus personnel.
+          </div>
+          <div class="practical-item">
+            <strong>Premier contact</strong>
+            Premier contact via le formulaire. Je vous réponds ensuite pour échanger tranquillement.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="panel">
+        <h2 class="section-title">Me contacter</h2>
+        <p class="lead">Vous pouvez me laisser quelques informations pour que je comprenne mieux votre demande avant de vous répondre.</p>
+
+        <form id="contactForm" method="post" enctype="text/plain">
+          <div class="form-row">
+            <label>
+              Prénom
+              <input type="text" name="Prénom" autocomplete="given-name" />
+            </label>
+            <label>
+              Âge
+              <input type="number" name="Âge" min="7" max="110" inputmode="numeric" />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Téléphone
+              <input type="tel" name="Téléphone" autocomplete="tel" />
+            </label>
+            <label>
+              Niveau actuel
+              <select name="Niveau">
+                <option value="Non renseigné">Choisir une option</option>
+                <option value="Débutant complet">Débutant complet</option>
+                <option value="J’ai déjà quelques bases">J’ai déjà quelques bases</option>
+                <option value="Intermédiaire">Intermédiaire</option>
+                <option value="Reprise après une pause">Reprise après une pause</option>
+                <option value="Je ne sais pas trop">Je ne sais pas trop</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Vos attentes, envies ou blocages éventuels
+            <textarea name="Attentes" placeholder="Exemple : apprendre à accompagner des chansons, reprendre confiance, travailler le rythme, jouer et chanter, comprendre l’harmonie…"></textarea>
+          </label>
+
+          <button class="button primary" type="submit">Préparer l’envoi du message</button>
+          <p class="fineprint">Ce formulaire prépare un email depuis votre application de messagerie. Mes coordonnées ne sont pas affichées publiquement sur cette page.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="ornament" style="margin: 0 auto 20px;" aria-hidden="true"></div>
+    <strong>Grégory Berrué — Cours de guitare à Saint-Étienne</strong>
+    <div class="contact-strip">
+      <span>Contact uniquement via le formulaire</span>
+      <span>Anatole France — Tréfilerie</span>
+    </div>
+  </footer>
+  <script>
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const user = 'g.berrue';
+      const domain = 'yahoo.fr';
+      form.action = 'mailto:' + user + '@' + domain + '?subject=' + encodeURIComponent('Demande de cours de guitare à Saint-Étienne');
+      form.submit();
+    });
+  </script>
+</body>
+</html>
