@@ -616,7 +616,7 @@
         <h2 class="section-title">Me contacter</h2>
         <p class="lead">Vous pouvez me laisser quelques informations pour que je comprenne mieux votre demande avant de vous répondre.</p>
 
-        <form id="contactForm" method="post" enctype="text/plain">
+        <form id="contactForm">
           <div class="form-row">
             <label>
               Prénom *
@@ -634,7 +634,7 @@
           </label>
 
           <button class="button primary" type="submit">Préparer l’envoi du message</button>
-          <p class="fineprint">* Champs obligatoires. Ce formulaire prépare un email depuis votre application de messagerie. Mes coordonnées ne sont pas affichées publiquement sur cette page.</p>
+          <p class="fineprint">* Champs obligatoires. Ce bouton ouvre votre application de messagerie avec un email prérempli. Mes coordonnées ne sont pas affichées publiquement sur cette page.</p>
         </form>
       </div>
     </section>
@@ -654,8 +654,20 @@
       event.preventDefault();
       const user = 'g.berrue';
       const domain = 'yahoo.fr';
-      form.action = 'mailto:' + user + '@' + domain + '?subject=' + encodeURIComponent('Demande de cours de guitare à Saint-Étienne');
-      form.submit();
+      const prenom = form.Prénom.value;
+      const telephone = form.Téléphone.value;
+      const attentes = form.Attentes.value;
+
+      let body = 'Prénom : ' + prenom + '\nTéléphone : ' + telephone;
+      if (attentes.trim() !== '') {
+        body += '\nAttentes : ' + attentes;
+      }
+
+      const mailtoUrl = 'mailto:' + user + '@' + domain +
+        '?subject=' + encodeURIComponent('Demande de cours de guitare à Saint-Étienne') +
+        '&body=' + encodeURIComponent(body);
+
+      window.location.href = mailtoUrl;
     });
   </script>
   <script>
