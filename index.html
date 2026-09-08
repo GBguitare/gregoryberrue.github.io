@@ -104,20 +104,20 @@
     h1, h2, h3 { line-height: 1.08; margin: 0; font-weight: 500; }
 
     h1 {
-      font-size: clamp(3.2rem, 8vw, 6.7rem);
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
       color: var(--brown);
-      letter-spacing: -.045em;
+      letter-spacing: -.035em;
     }
 
     .subtitle {
-      font-size: clamp(1.45rem, 3vw, 2.25rem);
+      font-size: clamp(1.2rem, 2.3vw, 1.7rem);
       color: var(--brown-dark);
       margin: 14px 0 18px;
       line-height: 1.18;
     }
 
     .promise {
-      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      font-size: clamp(1.05rem, 1.6vw, 1.35rem);
       font-style: italic;
       color: var(--muted);
       margin: 28px 0 0;
@@ -192,7 +192,7 @@
 
     .intro {
       text-align: center;
-      font-size: clamp(1.25rem, 2.35vw, 1.85rem);
+      font-size: clamp(1.1rem, 1.9vw, 1.5rem);
       line-height: 1.42;
       max-width: 860px;
       margin: 0 auto;
@@ -341,6 +341,87 @@
       font-size: 1.08rem;
     }
 
+    .video-wrap {
+      position: relative;
+      padding-top: 56.25%;
+      border-radius: 22px;
+      overflow: hidden;
+      margin-top: 26px;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .bd-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .bd-thumb {
+      width: 100%;
+      border-radius: 14px;
+      cursor: pointer;
+      border: 1px solid rgba(120,75,42,.22);
+      display: block;
+      transition: transform .2s ease;
+    }
+
+    .bd-thumb:hover { transform: translateY(-3px); }
+
+    #bdLightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(31,18,13,.88);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    #bdLightboxImg {
+      max-width: 92vw;
+      max-height: 88vh;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    }
+
+    #bdPrev, #bdNext {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--brown);
+      color: var(--cream);
+      border: none;
+      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    #bdPrev { left: 14px; }
+    #bdNext { right: 14px; }
+
+    #bdClose {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      color: var(--cream);
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
     @media (max-width: 860px) {
       .hero {
         grid-template-columns: 1fr;
@@ -390,6 +471,7 @@
         <p><em>Et si la musique devenait un chemin vers vous-même&nbsp;?</em></p>
         <p>Vous ressentez l’envie de jouer, sans savoir par où commencer… ou vous avez déjà essayé, sans jamais vraiment trouver votre place&nbsp;?</p>
         <p><strong>Il n’est jamais trop tard pour commencer.</strong></p>
+        <p style="margin-top:22px;">N’hésitez pas à regarder <a href="#video" style="color:var(--brown);font-weight:700;">la vidéo</a> ou <a href="#bd" style="color:var(--brown);font-weight:700;">la BD</a> ci-dessous, qui présentent ma manière de fonctionner.</p>
       </div>
     </section>
 
@@ -469,6 +551,46 @@
       </div>
     </section>
 
+    <section id="video">
+      <div class="panel">
+        <h2 class="section-title">En vidéo</h2>
+        <p class="lead">Un aperçu en musique.</p>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/bxx5ZDFz_kw"
+            title="Vidéo YouTube — Grégory Berrué"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="bd">
+      <div class="panel">
+        <h2 class="section-title">Histoires de guitare</h2>
+        <p class="lead">Une bande dessinée pour découvrir ma manière d'enseigner, à travers une journée de cours à Saint-Étienne.</p>
+
+        <div class="bd-grid">
+          <img class="bd-thumb" src="bd-01.jpg" alt="Histoires de guitare - couverture">
+          <img class="bd-thumb" src="bd-02.jpg" alt="Histoires de guitare - page 2">
+          <img class="bd-thumb" src="bd-03.jpg" alt="Histoires de guitare - page 3">
+          <img class="bd-thumb" src="bd-04.jpg" alt="Histoires de guitare - page 4">
+          <img class="bd-thumb" src="bd-05.jpg" alt="Histoires de guitare - page 5">
+          <img class="bd-thumb" src="bd-06.jpg" alt="Histoires de guitare - page 6">
+          <img class="bd-thumb" src="bd-07.jpg" alt="Histoires de guitare - page finale">
+          <img class="bd-thumb" src="bd-08.jpg" alt="Cours de guitare à Saint-Étienne - affiche">
+        </div>
+      </div>
+    </section>
+
+    <div id="bdLightbox">
+      <img id="bdLightboxImg" src="" alt="">
+      <button id="bdPrev" aria-label="Précédent">‹</button>
+      <button id="bdNext" aria-label="Suivant">›</button>
+      <button id="bdClose" aria-label="Fermer">×</button>
+    </div>
+
     <section>
       <div class="panel">
         <h2 class="section-title">Infos pratiques</h2>
@@ -497,40 +619,22 @@
         <form id="contactForm" method="post" enctype="text/plain">
           <div class="form-row">
             <label>
-              Prénom
-              <input type="text" name="Prénom" autocomplete="given-name" />
+              Prénom *
+              <input type="text" name="Prénom" autocomplete="given-name" required />
             </label>
             <label>
-              Âge
-              <input type="number" name="Âge" min="7" max="110" inputmode="numeric" />
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>
-              Téléphone
-              <input type="tel" name="Téléphone" autocomplete="tel" />
-            </label>
-            <label>
-              Niveau actuel
-              <select name="Niveau">
-                <option value="Non renseigné">Choisir une option</option>
-                <option value="Débutant complet">Débutant complet</option>
-                <option value="J’ai déjà quelques bases">J’ai déjà quelques bases</option>
-                <option value="Intermédiaire">Intermédiaire</option>
-                <option value="Reprise après une pause">Reprise après une pause</option>
-                <option value="Je ne sais pas trop">Je ne sais pas trop</option>
-              </select>
+              Téléphone *
+              <input type="tel" name="Téléphone" autocomplete="tel" required />
             </label>
           </div>
 
           <label>
-            Vos attentes, envies ou blocages éventuels
+            Vos attentes, envies ou blocages éventuels <span style="font-weight:400;color:var(--muted);">(facultatif)</span>
             <textarea name="Attentes" placeholder="Exemple : apprendre à accompagner des chansons, reprendre confiance, travailler le rythme, jouer et chanter, comprendre l’harmonie…"></textarea>
           </label>
 
           <button class="button primary" type="submit">Préparer l’envoi du message</button>
-          <p class="fineprint">Ce formulaire prépare un email depuis votre application de messagerie. Mes coordonnées ne sont pas affichées publiquement sur cette page.</p>
+          <p class="fineprint">* Champs obligatoires. Ce formulaire prépare un email depuis votre application de messagerie. Mes coordonnées ne sont pas affichées publiquement sur cette page.</p>
         </form>
       </div>
     </section>
@@ -552,6 +656,35 @@
       const domain = 'yahoo.fr';
       form.action = 'mailto:' + user + '@' + domain + '?subject=' + encodeURIComponent('Demande de cours de guitare à Saint-Étienne');
       form.submit();
+    });
+  </script>
+  <script>
+    const bdImages = ['bd-01.jpg','bd-02.jpg','bd-03.jpg','bd-04.jpg','bd-05.jpg','bd-06.jpg','bd-07.jpg','bd-08.jpg'];
+    let bdIndex = 0;
+    const bdLightbox = document.getElementById('bdLightbox');
+    const bdLightboxImg = document.getElementById('bdLightboxImg');
+
+    function bdOpen(i) {
+      bdIndex = i;
+      bdLightboxImg.src = bdImages[bdIndex];
+      bdLightbox.style.display = 'flex';
+    }
+    function bdShow(delta) {
+      bdIndex = (bdIndex + delta + bdImages.length) % bdImages.length;
+      bdLightboxImg.src = bdImages[bdIndex];
+    }
+    document.querySelectorAll('.bd-thumb').forEach((img, i) => {
+      img.addEventListener('click', () => bdOpen(i));
+    });
+    document.getElementById('bdPrev').addEventListener('click', () => bdShow(-1));
+    document.getElementById('bdNext').addEventListener('click', () => bdShow(1));
+    document.getElementById('bdClose').addEventListener('click', () => bdLightbox.style.display = 'none');
+    bdLightbox.addEventListener('click', (e) => { if (e.target === bdLightbox) bdLightbox.style.display = 'none'; });
+    document.addEventListener('keydown', (e) => {
+      if (bdLightbox.style.display !== 'flex') return;
+      if (e.key === 'Escape') bdLightbox.style.display = 'none';
+      if (e.key === 'ArrowLeft') bdShow(-1);
+      if (e.key === 'ArrowRight') bdShow(1);
     });
   </script>
 </body>
