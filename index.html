@@ -59,17 +59,17 @@
     }
 
     .hero {
-      min-height: 92vh;
+      min-height: 72vh;
       display: grid;
-      grid-template-columns: 1.02fr .98fr;
+      grid-template-columns: .82fr 1.18fr;
       gap: 42px;
       align-items: center;
-      padding: 48px 0 34px;
+      padding: 48px 0 30px;
     }
 
     .portrait-card {
       position: relative;
-      min-height: 620px;
+      min-height: 420px;
       border-radius: var(--radius);
       overflow: hidden;
       border: 1px solid rgba(216,179,122,.45);
@@ -104,30 +104,30 @@
     h1, h2, h3 { line-height: 1.08; margin: 0; font-weight: 500; }
 
     h1 {
-      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      font-size: clamp(2.1rem, 5vw, 3.8rem);
       color: var(--brown);
       letter-spacing: -.035em;
     }
 
     .subtitle {
-      font-size: clamp(1.2rem, 2.3vw, 1.7rem);
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
       color: var(--brown-dark);
       margin: 14px 0 18px;
       line-height: 1.18;
     }
 
     .promise {
-      font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+      font-size: clamp(1rem, 1.4vw, 1.2rem);
       font-style: italic;
       color: var(--muted);
-      margin: 28px 0 0;
+      margin: 20px 0 0;
     }
 
     .ornament {
       width: 160px;
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      margin: 26px 0;
+      margin: 22px 0;
       position: relative;
     }
 
@@ -149,7 +149,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 32px;
+      margin-top: 26px;
     }
 
     .button {
@@ -179,6 +179,10 @@
     .button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(74,43,27,.22); }
 
     section { padding: 54px 0; }
+
+    .hero-video {
+      padding: 0 0 34px;
+    }
 
     .panel {
       background:
@@ -430,7 +434,7 @@
       }
 
       .portrait-card {
-        min-height: 430px;
+        min-height: 320px;
         order: -1;
       }
 
@@ -441,7 +445,7 @@
 
     @media (max-width: 520px) {
       .site { width: min(100% - 22px, 1120px); }
-      .portrait-card { min-height: 330px; border-radius: 22px; }
+      .portrait-card { min-height: 260px; border-radius: 22px; }
       .panel { border-radius: 22px; padding: 24px 18px; }
       .button { width: 100%; }
     }
@@ -455,10 +459,10 @@
       <div class="hero-content">
         <div class="eyebrow">Saint-Étienne centre · Anatole France — Tréfilerie</div>
         <h1>Cours de guitare à Saint-Étienne</h1>
-        <p class="subtitle">Grégory Berrué<br /> Pour adultes, jeunes adultes et séniors, débutants complets à intermédiaires, etc. </p>
+        <p class="subtitle">Grégory Berrué<br /> Pour débutants complets et intermédiaires. </p>
         <div class="ornament" aria-hidden="true"></div>
-        <p class="promise">Cours de guitare sur Saint-Étienne avec une approche globale, sensible et personnalisée.</p>
-        <p class="promise">Révélez-vous à travers l’instrument.</p>
+        <p class="promise">Cours de guitare acoustique et électrique sur Saint-Étienne avec une approche globale et personnalisée.</p>
+        <p class="promise">Révélez-vous à travers l'instrument.</p>
         <div class="cta-row">
           <a class="button primary" href="#contact">Me contacter</a>
           <a class="button secondary" href="#approche">Découvrir mon approche</a>
@@ -466,26 +470,39 @@
       </div>
     </header>
 
+    <section class="hero-video" id="video">
+      <div class="panel">
+        <div class="video-wrap" style="margin-top:0;">
+          <iframe
+            src="https://www.youtube.com/embed/1SQyyA_Z01A"
+            title="Vidéo YouTube — Grégory Berrué"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
     <section>
       <div class="panel intro">
         <p><em>Et si la musique devenait un chemin vers vous-même&nbsp;?</em></p>
-        <p>Vous ressentez l’envie de jouer, sans savoir par où commencer… ou vous avez déjà essayé, sans jamais vraiment trouver votre place&nbsp;?</p>
-        <p><strong>Il n’est jamais trop tard pour commencer.</strong></p>
-        <p style="margin-top:22px;">N’hésitez pas à regarder <a href="#video" style="color:var(--brown);font-weight:700;">la vidéo</a> ou <a href="#bd" style="color:var(--brown);font-weight:700;">la BD</a> ci-dessous, qui présentent ma manière de fonctionner.</p>
+        <p>Vous ressentez l'envie de jouer, sans savoir par où commencer… ou vous avez déjà essayé, sans jamais vraiment trouver votre place&nbsp;?</p>
+        <p><strong>Il n'est jamais trop tard pour commencer.</strong></p>
+        <p style="margin-top:22px;">N'hésitez pas à regarder <a href="#video" style="color:var(--brown);font-weight:700;">la vidéo</a> ci-dessus ou <a href="#bd" style="color:var(--brown);font-weight:700;">la BD</a> ci-dessous, qui présentent ma manière de fonctionner.</p>
       </div>
     </section>
 
     <section id="approche">
       <div class="panel">
-        <h2 class="section-title">Une autre manière d’apprendre la guitare</h2>
-        <p class="lead">Je propose des cours de guitare à Saint-Étienne centrés sur la personne avant la performance. La guitare devient un outil pour se reconnecter à soi, retrouver du plaisir, de la confiance et s’exprimer librement.</p>
+        <h2 class="section-title">Une autre manière d'apprendre la guitare</h2>
+        <p class="lead">Je propose des cours de guitare à Saint-Étienne centrés sur la personne avant la performance. La guitare devient un outil pour se reconnecter à soi, retrouver du plaisir, de la confiance et s'exprimer librement.</p>
 
         <div class="grid-2" style="margin-top: 30px;">
           <article class="card">
             <h3>Pour qui&nbsp;?</h3>
             <ul>
               <li>Débutants complets.</li>
-              <li>Adultes qui n’osent pas se lancer.</li>
+              <li>Adultes qui n'osent pas se lancer.</li>
               <li>Guitaristes intermédiaires qui souhaitent progresser.</li>
               <li>Personnes qui reprennent après une pause ou un blocage.</li>
             </ul>
@@ -509,60 +526,45 @@
       <div class="panel story">
         <h2 class="section-title">Qui suis-je&nbsp;?</h2>
 
-        <p><strong>Je n’ai pas grandi avec une guitare entre les mains. Je ne suis pas passé par le conservatoire.</strong> Pendant longtemps, la musique est restée quelque chose que je regardais de loin, avec envie, en pensant qu’il était trop tard pour m’y mettre.</p>
+        <p><strong>Je n'ai pas grandi avec une guitare entre les mains. Je ne suis pas passé par le conservatoire.</strong> Pendant longtemps, la musique est restée quelque chose que je regardais de loin, avec envie, en pensant qu'il était trop tard pour m'y mettre.</p>
 
-        <p><strong>J’ai commencé la guitare à 38 ans</strong>, après plusieurs années à enchaîner des burn-out, avec cette sensation persistante de ne pas être à ma place.</p>
+        <p><strong>J'ai commencé la guitare à 38 ans</strong>, après plusieurs années à enchaîner des burn-out, avec cette sensation persistante de ne pas être à ma place.</p>
 
-        <p>Puis un jour, j’ai pris une guitare.</p>
+        <p>Puis un jour, j'ai pris une guitare.</p>
 
-        <p>Très vite, ça a été une évidence. <strong>Pas juste un loisir, mais un point d’ancrage.</strong> Quelque chose qui m’a permis de me recentrer, de retrouver du plaisir, du calme, du sens.</p>
+        <p>Très vite, ça a été une évidence. <strong>Pas juste un loisir, mais un point d'ancrage.</strong> Quelque chose qui m'a permis de me recentrer, de retrouver du plaisir, du calme, du sens.</p>
 
-        <p>Alors j’ai plongé. Des heures chaque jour. Avec enthousiasme, mais aussi avec beaucoup d’erreurs. J’ai cherché seul, je me suis dispersé, j’ai perdu du temps sur des choses inutiles ou mal adaptées à moi.</p>
+        <p>Alors j'ai plongé. Des heures chaque jour. Avec enthousiasme, mais aussi avec beaucoup d'erreurs. J'ai cherché seul, je me suis dispersé, j'ai perdu du temps sur des choses inutiles ou mal adaptées à moi.</p>
 
-        <p><strong>Et c’est précisément pour ça que j’enseigne aujourd’hui.</strong></p>
+        <p><strong>Et c'est précisément pour ça que j'enseigne aujourd'hui.</strong></p>
 
-        <p>Parce que ce chemin, je l’ai parcouru récemment. Je sais ce que ça fait de débuter&nbsp;: les doutes, la frustration, l’impression de ne pas avancer… mais aussi les déclics, les petites victoires, et le plaisir immense quand tout commence à s’aligner.</p>
+        <p>Parce que ce chemin, je l'ai parcouru récemment. Je sais ce que ça fait de débuter&nbsp;: les doutes, la frustration, l'impression de ne pas avancer… mais aussi les déclics, les petites victoires, et le plaisir immense quand tout commence à s'aligner.</p>
 
-        <p>Je suis convaincu de deux choses&nbsp;: <strong>il n’est jamais trop tard pour commencer</strong>, et <strong>avec une approche adaptée, on peut progresser rapidement et atteindre un très bon niveau</strong>.</p>
+        <p>Je suis convaincu de deux choses&nbsp;: <strong>il n'est jamais trop tard pour commencer</strong>, et <strong>avec une approche adaptée, on peut progresser rapidement et atteindre un très bon niveau</strong>.</p>
 
-        <p>Aujourd’hui, j’accompagne en priorité des <strong>adultes qui ressentent l’envie de jouer sans forcément oser</strong>, ou qui pensent que ce n’est plus possible, sans savoir comment s’y prendre. J’accompagne aussi <strong>des guitaristes ayant déjà de bonnes bases</strong>, mais qui se sentent bloqués, tournent en rond, ou ont perdu le plaisir de jouer.</p>
+        <p>Aujourd'hui, j'accompagne en priorité des <strong>adultes qui ressentent l'envie de jouer sans forcément oser</strong>, ou qui pensent que ce n'est plus possible, sans savoir comment s'y prendre. J'accompagne aussi <strong>des guitaristes ayant déjà de bonnes bases</strong>, mais qui se sentent bloqués, tournent en rond, ou ont perdu le plaisir de jouer.</p>
 
         <p><strong>Pas avec une méthode standard</strong>, mais avec une approche humaine, sensible et personnalisée.</p>
 
-        <p>Apprendre la guitare, ce n’est pas seulement enchaîner des positions d’accords, mémoriser des schémas de pentatoniques ou parcourir mécaniquement des gammes majeures et mineures sur le manche. <strong>C’est trouver ce qui, en nous, demande à éclore… et le laisser s’exprimer.</strong></p>
+        <p>Apprendre la guitare, ce n'est pas seulement enchaîner des positions d'accords, mémoriser des schémas de pentatoniques ou parcourir mécaniquement des gammes majeures et mineures sur le manche. <strong>C'est trouver ce qui, en nous, demande à éclore… et le laisser s'exprimer.</strong></p>
 
-        <p>J’ai développé une approche d’enseignement qui permet, dès les premiers cours, de <strong>comprendre l’harmonie à travers des images simples et des métaphores concrètes</strong>, qui la rendent accessible et intuitive. J’y associe un <strong>travail du rythme clair et structuré</strong>, pour ancrer des bases solides et progresser rapidement.</p>
+        <p>J'ai développé une approche d'enseignement qui permet, dès les premiers cours, de <strong>comprendre l'harmonie à travers des images simples et des métaphores concrètes</strong>, qui la rendent accessible et intuitive. J'y associe un <strong>travail du rythme clair et structuré</strong>, pour ancrer des bases solides et progresser rapidement.</p>
 
-        <p>Je joue et j’enseigne presque tous les styles. Certains styles très spécifiques, comme le <strong>manouche</strong>, ne font pas partie de mon champ d’expertise&nbsp;: dans ce cas, je préfère vous rediriger vers un enseignant plus spécialisé.</p>
+        <p>Je joue et j'enseigne presque tous les styles. Certains styles très spécifiques, comme le <strong>manouche</strong>, ne font pas partie de mon champ d'expertise&nbsp;: dans ce cas, je préfère vous rediriger vers un enseignant plus spécialisé.</p>
 
-        <p>J’ai également des bases solides en chant, ce qui me permet de vous accompagner si vous souhaitez <strong>jouer tout en chantant</strong>. Je peux aussi vous accompagner sur le <strong>solfège si vous en ressentez le besoin</strong>, même si je considère que pour la guitare, ce n’est pas indispensable.</p>
+        <p>J'ai également des bases solides en chant, ce qui me permet de vous accompagner si vous souhaitez <strong>jouer tout en chantant</strong>. Je peux aussi vous accompagner sur le <strong>solfège si vous en ressentez le besoin</strong>, même si je considère que pour la guitare, ce n'est pas indispensable.</p>
 
-        <p><strong>Je prépare spécifiquement chaque cours pour vous</strong>, d’une séance à l’autre, en fonction de votre progression, de vos objectifs et de votre sensibilité.</p>
+        <p><strong>Je prépare spécifiquement chaque cours pour vous</strong>, d'une séance à l'autre, en fonction de votre progression, de vos objectifs et de votre sensibilité.</p>
 
-        <p>Enfin, le cours est aussi un temps d’échange. Mais je tiens à ce que <strong>ce temps ne soit pas facturé sur votre heure de cours</strong>. Pour cela, j’utilise un sablier de 30 minutes, que l’on retourne deux fois pendant la séance. Entre deux cycles, une pause est possible&nbsp;: prendre un café, échanger librement, souffler… puis reprendre quand vous vous sentez prêt.</p>
+        <p>Enfin, le cours est aussi un temps d'échange. Mais je tiens à ce que <strong>ce temps ne soit pas facturé sur votre heure de cours</strong>. Pour cela, j'utilise un sablier de 30 minutes, que l'on retourne deux fois pendant la séance. Entre deux cycles, une pause est possible&nbsp;: prendre un café, échanger librement, souffler… puis reprendre quand vous vous sentez prêt.</p>
 
         <p>Je prévois toujours une marge entre deux élèves, car mieux vous connaître fait pleinement partie du travail — et me permet de vous accompagner de manière plus juste, plus humaine.</p>
 
-        <p>Je vous reçois chez moi, dans un cadre entièrement pensé pour vous accueillir. <strong>Mon salon a été aménagé spécifiquement</strong> pour que vous vous y sentiez à l’aise, dans de bonnes conditions pour apprendre et progresser.</p>
+        <p>Je vous reçois chez moi, dans un cadre entièrement pensé pour vous accueillir. <strong>Mon salon a été aménagé spécifiquement</strong> pour que vous vous y sentiez à l'aise, dans de bonnes conditions pour apprendre et progresser.</p>
 
-        <p><strong>Je dispose également d’un piano</strong>, qui me permet parfois d’expliquer certaines notions — notamment d’harmonie — de manière plus visuelle et intuitive que sur la guitare.</p>
+        <p><strong>Je dispose également d'un piano</strong>, qui me permet parfois d'expliquer certaines notions — notamment d'harmonie — de manière plus visuelle et intuitive que sur la guitare.</p>
 
-        <div class="quote">« Il n’est jamais trop tard pour commencer. »</div>
-      </div>
-    </section>
-
-    <section id="video">
-      <div class="panel">
-        <h2 class="section-title">En vidéo</h2>
-        <p class="lead">Un aperçu en musique.</p>
-        <div class="video-wrap">
-          <iframe
-            src="https://www.youtube.com/embed/1SQyyA_Z01A"
-            title="Vidéo YouTube — Grégory Berrué"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            loading="lazy"></iframe>
-        </div>
+        <div class="quote">« Il n'est jamais trop tard pour commencer. »</div>
       </div>
     </section>
 
@@ -601,7 +603,7 @@
           </div>
           <div class="practical-item">
             <strong>Public</strong>
-            Adultes débutants, reprises, intermédiaires bloqués ou en recherche d’un accompagnement plus personnel.
+            Adultes débutants, reprises, intermédiaires bloqués ou en recherche d'un accompagnement plus personnel.
           </div>
           <div class="practical-item">
             <strong>Premier contact</strong>
@@ -630,10 +632,10 @@
 
           <label>
             Vos attentes, envies ou blocages éventuels <span style="font-weight:400;color:var(--muted);">(facultatif)</span>
-            <textarea name="Attentes" placeholder="Exemple : apprendre à accompagner des chansons, reprendre confiance, travailler le rythme, jouer et chanter, comprendre l’harmonie…"></textarea>
+            <textarea name="Attentes" placeholder="Exemple : apprendre à accompagner des chansons, reprendre confiance, travailler le rythme, jouer et chanter, comprendre l'harmonie…"></textarea>
           </label>
 
-          <button class="button primary" type="submit">Préparer l’envoi du message</button>
+          <button class="button primary" type="submit">Préparer l'envoi du message</button>
           <p class="fineprint">* Champs obligatoires. Ce bouton ouvre votre application de messagerie avec un email prérempli. Mes coordonnées ne sont pas affichées publiquement sur cette page.</p>
         </form>
       </div>
